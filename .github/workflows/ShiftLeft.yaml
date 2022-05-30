@@ -6,10 +6,11 @@ name: Shiftleft Scan
 jobs:
   scanning:
     env:
-      APP_ID: e59b7c0f73bcfa62589281af3e11c7657f03c7eb3c74adb05de817a6555a0983
-      REQ_URL_MAP: "${{toJSON('{\"SL_RESULTPARSER_API_HOST\":\"https://slresultparserapi.qa.securin.io/resultparserapi/v1\"\
-        ,\"SL_API_HOST\":\"https://slapi.qa.securin.io/shiftleftapi\",\"SL_RESULT_API_HOST\"\
-        :\"https://slresultapi.qa.securin.io/resultapi/v1\"}')}}"
+      APP_ID: 9e78b220cd455a65503b3c393b72ff8c2f63ad8be1f362ba2eca85bf20601959
+      REQ_URL_MAP: "${{toJSON('{\"SL_API_HOST\":\"https://slapi.qa.securin.io/shiftleftapi\"\
+        ,\"SL_RESULTPARSER_API_HOST\":\"https://slresultparserapi.qa.securin.io/resultparserapi/v1\"\
+        ,\"SL_RESULT_API_HOST\":\"https://slresultapi.qa.securin.io/resultapi/v1\"\
+        }')}}"
     steps:
     - name: Retrieve Scan Info
       id: auth_token
