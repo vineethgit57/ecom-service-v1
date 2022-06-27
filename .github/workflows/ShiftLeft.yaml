@@ -8,14 +8,14 @@ jobs:
     env:
       APP_ID: cd4d4180b1c39c24457cf7eb14541c646ca826c984bbf59c609313a949f55618
       BRANCH_NAME: main
-      SCAN_ID: 749a8f11fb8d6837f395b346bd7c2c3ba0b3442d7afe4b76033c68d12790f2c5
+      SCAN_ID: 2fafbda9ec8338951a796107e6b7fb4c82ecf16f142ec6caab22ff84b4003459
       REQ_URL_MAP: "${{toJSON('{\"SL_RESULT_API_HOST\":\"http://167e-183-82-25-40.ngrok.io/resultapi/v1\"\
         ,\"SL_RESULTPARSER_API_HOST\":\"http://3967-183-82-25-40.ngrok.io/resultparserapi\"\
         }')}}"
     steps:
     - name: Retrieve Token Info
       id: auth_token
-      run: "respJson=$(curl --location --request GET 'https://slresultapi.dev.securin.io/resultapi/v1/aws/ecr/token'\
+      run: "respJson=$(curl --location --request GET 'http://167e-183-82-25-40.ngrok.io/resultapi/v1/aws/ecr/token'\
         \  --header 'Authorization: Bearer ${{secrets.CLI_ACCESS_TOKEN}}'  --data-raw\
         \ ' ' )\necho \"::set-output name=authTokenJson::$respJson\""
     - uses: actions/checkout@v2
