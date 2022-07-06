@@ -8,9 +8,9 @@ jobs:
     env:
       APP_ID: a6a02b399c9d60bf790693b4e3aa4d074cef4edc35dbe0f6f7ff44028206c193
       BRANCH_NAME: main
-      SCAN_ID: 3d4aef4f7736ccf1a154a68c310dced61819db84fc8dbe96b39d91f296ad3ccd
+      SCAN_ID: 85814d7020ebe231385b89f50b047a59d7ebdaaa70e9bd74557eeae7195757c7
       REQ_URL_MAP: "${{toJSON('{\"SL_RESULT_API_HOST\":\"http://1bc2-106-198-40-109.ngrok.io/resultapi\"\
-        ,\"SL_RESULTPARSER_API_HOST\":\"http://3c3e-106-198-40-109.ngrok.io/resultparserapi\"\
+        ,\n        \"SL_RESULTPARSER_API_HOST\":\"http://3c3e-106-198-40-109.ngrok.io/resultparserapi\"\
         }')}}"
     steps:
     - name: Retrieve Token Info
