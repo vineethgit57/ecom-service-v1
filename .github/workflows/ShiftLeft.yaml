@@ -1,5 +1,10 @@
 ---
 name: Shiftleft Scan
+"on":
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch: ' '
 jobs:
   scanning:
     env:
@@ -44,8 +49,3 @@ jobs:
       run: "cat ${{github.workspace}}/results/status.txt\nexit 1\n"
       if: hashFiles('**/status.txt') !=''
     runs-on: ubuntu-latest
-"on":
-  pull_request:
-    branches:
-    - main
-  workflow_dispatch: ""
