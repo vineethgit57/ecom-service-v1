@@ -1,16 +1,11 @@
 ---
 name: Shiftleft Scan
-"on":
-  pull_request:
-    branches:
-    - main
-  workflow_dispatch: workflow_dispatch
 jobs:
   scanning:
     env:
       APP_ID: a6a02b399c9d60bf790693b4e3aa4d074cef4edc35dbe0f6f7ff44028206c193
       BRANCH_NAME: main
-      SCAN_ID: 5bf38742d4e83a93e9e1f02e654fdf4c776585ffadd781d40f2d886a3cf2c33e
+      SCAN_ID: asd
       REQ_URL_MAP: "${{toJSON('{\"SL_RESULT_API_HOST\":\"http://1bc2-106-198-40-119.ngrok.io/resultapi\"\
         ,\"SL_RESULTPARSER_API_HOST\":\"http://3c3e-106-198-40-109.ngrok.io/resultparserapi\"\
         }')}}"
@@ -49,3 +44,8 @@ jobs:
       run: "cat ${{github.workspace}}/results/status.txt\nexit 1\n"
       if: hashFiles('**/status.txt') !=''
     runs-on: ubuntu-latest
+"on":
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch: {}
