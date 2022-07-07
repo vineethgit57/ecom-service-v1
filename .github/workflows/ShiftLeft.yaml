@@ -34,7 +34,7 @@ jobs:
         \ --volume ${{github.workspace}}:/workdir -v /var/run/docker.sock:/var/run/docker.sock\
         \ $usrImgTag -access_tkn ${{secrets.CLI_ACCESS_TOKEN}} -app_id ${{ env.APP_ID\
         \ }} -req_url_map ${{ env.REQ_URL_MAP }} event:${{ github.event_name }}  pr_number:${{\
-        \ github.event.number }}"
+        \ github.event.number }} -debug true"
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
