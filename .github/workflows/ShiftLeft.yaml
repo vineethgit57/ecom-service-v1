@@ -44,7 +44,7 @@ jobs:
         \ $usrImgTag -access_tkn ${{secrets.CLI_ACCESS_TOKEN}} -app_id ${{ env.APP_ID\
         \ }} -scan_id ${{ env.SCAN_ID }} -branch_name ${{ env.BRANCH_NAME }} -req_url_map\
         \ ${{ env.REQ_URL_MAP }} event:${{ github.event_name }}  pr_number:${{ github.event.number\
-        \ }}"
+        \ }} -debug true"
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
