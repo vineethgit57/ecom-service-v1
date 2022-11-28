@@ -13,7 +13,7 @@ jobs:
     env:
       APP_ID: 221e332295fbfa47997412ab75e84018c44f2f7bd69b9bbe2c067ebd923b7077
       BRANCH_NAME: dev3
-      SCAN_ID: e2d44d195e84726160fbcbf4ca7253e0b5a7480f02817798387f7a03b3ca5178
+      SCAN_ID: 220780788dd6df84ad8a149ade57cd442dc3ba91cd9b726cde0b4daa310f8594
       REQ_URL_MAP: "${{toJSON('{\"SL_RESULT_API_HOST\":\"https://slresultapi.qa.securin.io/resultapi\"\
         ,\"SL_RESULTPARSER_API_HOST\":\"https://slresultparserapi.qa.securin.io/resultparserapi\"\
         }')}}"
@@ -39,7 +39,7 @@ jobs:
         \ --volume ${{github.workspace}}:/workdir -v /var/run/docker.sock:/var/run/docker.sock\
         \ $usrImgTag -access_tkn ${{secrets.CLI_ACCESS_TOKEN}} -app_id ${{ env.APP_ID\
         \ }} -scan_id ${{ env.SCAN_ID }} -branch_name ${{ env.BRANCH_NAME }} -req_url_map\
-        \ ${{ env.REQ_URL_MAP }} -tool_name github event:${{ github.event_name }} -debug true -upload_log true\
+        \ ${{ env.REQ_URL_MAP }} -tool_name github event:${{ github.event_name }}\
         \  pr_number:${{ github.event.number }}"
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
