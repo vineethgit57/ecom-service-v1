@@ -13,14 +13,14 @@ jobs:
     env:
       APP_ID: 5e3c220e1b33bedd5f098d27eb3738ad074df5dc1336f32c49d53b3cd9a233f9
       BRANCH_NAME: main
-      SCAN_ID: d2db055a0264ed1685dbc80a743f40bccbefc3a6dab262086f8efd3ee19da378
-      REQ_URL_MAP: "${{toJSON('{\"SL_RESULTPARSER_API_HOST\":\"http://49c1-183-82-31-245.ngrok.io/resultparserapi/v1\"\
-        ,\"SL_RESULT_API_HOST\":\"http://caf9-183-82-31-245.ngrok.io/resultapi/v1\"\
+      SCAN_ID: 48fd14606ef7c67e9be4e2e13168f88e7d5366528fd24f6f9723259989080a42
+      REQ_URL_MAP: "${{toJSON('{\"SL_RESULTPARSER_API_HOST\":\"https://slresultparserapi.dev.securin.io/resultparserapi/v1\"\
+        ,\"SL_RESULT_API_HOST\":\"https://slresultapi.dev.securin.io/resultapi/v1\"\
         }')}}"
     steps:
     - name: Retrieve Token Info
       id: auth_token
-      run: "respJson=$(curl --location --request GET 'http://caf9-183-82-31-245.ngrok.io/resultapi/v1/aws/ecr/token'\
+      run: "respJson=$(curl --location --request GET 'https://slresultapi.dev.securin.io/resultapi/v1/aws/ecr/token'\
         \  --header 'Authorization: Bearer ${{secrets.CLI_ACCESS_TOKEN}}'  --data-raw\
         \ ' ' ) \necho \"authTokenJson=$respJson\" >> $GITHUB_OUTPUT"
     - uses: actions/checkout@v3
