@@ -94,5 +94,6 @@ public class InventoryService {
                 .findById(productId)
                 .orElseThrow(() -> new NotFoundException("Product with product id " + productId + " can't be found"));
     }
+    
 
 }
