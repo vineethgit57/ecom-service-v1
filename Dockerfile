@@ -1,4 +1,3 @@
-FROM ruby:3.0-alpine
 FROM alpine:latest
 
 RUN apk --update add --virtual build_deps \
