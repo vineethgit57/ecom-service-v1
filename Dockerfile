@@ -1,4 +1,5 @@
 FROM alpine:latest
+FROM openjdk:11
 
 RUN apk --update add --virtual build_deps \
     build-base \
