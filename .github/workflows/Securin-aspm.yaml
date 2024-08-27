@@ -3,7 +3,7 @@ name: Securin-ASPM
 on:
   pull_request:
     branches:
-    - main
+    - temp-main
   workflow_dispatch:
     inputs:
       logLevel:
@@ -12,8 +12,8 @@ jobs:
   scanning:
     env:
       APP_ID: 51e3087fb5e97a29408491dfac7bbbd6c4b5a0d0f435b279eadc977a3779ed90
-      BRANCH_NAME: main
-      SCAN_ID: 1ac18952731a7749a85b1d461775740eaad16c9ff285f0bd9261e60b2026c7ca
+      BRANCH_NAME: temp-main
+      SCAN_ID: 9d539c292bf03134417979be792bc705421dabb2adaa59c18ed9d0bcc364563c
       REQ_URL_MAP: "${{toJSON('{\"SL_RESULT_API_HOST\":\"https://slresultapi.qa.securin.io/resultapi\"\
         ,\"SL_RESULTPARSER_API_HOST\":\"https://slresultparserapi.qa.securin.io/resultparserapi\"\
         }')}}"
